@@ -16,7 +16,7 @@ import { QuestionScoreService } from '../../services/question-score/question-sco
 import { SkillTypesService } from '../../services/skill-types/skill-types.service';
 import { ScheduledScreening } from '../../entities/ScheduleScreening';
 import { SimpleTrainee } from '../../entities/SimpleTrainee';
-
+import { UrlService } from '../../services/urls/url.service';
 describe('CandidatesScreeningListComponent', () => {
   let component: CandidatesScreeningListComponent;
   let fixture: ComponentFixture<CandidatesScreeningListComponent>;
@@ -26,7 +26,7 @@ describe('CandidatesScreeningListComponent', () => {
       declarations: [CandidatesScreeningListComponent, SearchPipe, PaginatePipe, PaginationControlsComponent,
         PaginationControlsDirective],
       imports: [FormsModule, HttpClientModule],
-      providers: [SimpleTraineeService, ScreeningService, ScheduleScreeningService, SoftSkillsViolationService,
+      providers: [UrlService, SimpleTraineeService, ScreeningService, ScheduleScreeningService, SoftSkillsViolationService,
         QuestionScoreService, SkillTypesService, PaginationService]
     })
       .compileComponents();
@@ -53,38 +53,14 @@ describe('CandidatesScreeningListComponent', () => {
     expect(result).toEqual('block');
   });
 
-  it('should update storage', () => {
-    component.selectedScheduledScreening = {} as ScheduledScreening;
-    component.selectedScheduledScreening.scheduledScreeningId = 1;
-    component.confirmSelectedCandidate();
-    const confirm = localStorage.getItem('scheduledScreeningID');
-    expect(confirm).toEqual('1');
-  });
-
-  // it('should reload window', () => {
-  //   const spy = spyOn(window.location, 'reload');
-  //   component.ngOnInit();
-  //   expect(spy).toHaveBeenCalled();
-  // });
-
   it('should begin screening', () => {
     component.selectedScheduledScreening = {} as ScheduledScreening;
     component.selectedScheduledScreening.scheduledScreeningId = 1;
-    component.selectedScheduledScreening.trainer = 1;
+    // component.selectedScheduledScreening.trainer = 1;
     component.selectedCandidate = {} as SimpleTrainee;
     component.selectedCandidate.skillTypeID = 1;
     component.beginScreening();
     expect(component.scheduledScreenings).toBeDefined();
-  });
-
-  it('should populate localStorage', () => {
-    component.selectedScheduledScreening = {} as ScheduledScreening;
-    component.selectedScheduledScreening.scheduledScreeningId = 1;
-    component.selectedScheduledScreening.trainer = 1;
-    component.selectedCandidate = {} as SimpleTrainee;
-    component.selectedCandidate.skillTypeID = 1;
-    component.beginScreening();
-    expect(localStorage.getItem('screeningID')).not.toBeNull();
   });
 
 });
