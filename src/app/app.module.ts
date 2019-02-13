@@ -65,6 +65,7 @@ import { NavModule } from './nav.module';
 import { RoleGuard } from './role-guard';
 import { HttpClientModule } from '@angular/common/http';
 import { CandidateComponent } from './components/candidate/candidate.component';
+import { HardestQuestionsComponent } from './components/reports/hardest-questions/hardest-questions.component';
 
 @NgModule({
   declarations: [
@@ -96,6 +97,7 @@ import { CandidateComponent } from './components/candidate/candidate.component';
     ToolbarFilterPipe,
     TraineeSearch,
     TrainerPipePipe,
+    HardestQuestionsComponent,
   ],
   imports: [
     BrowserModule,
