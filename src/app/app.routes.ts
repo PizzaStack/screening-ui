@@ -10,12 +10,14 @@ import { ScreeningConfigComponent } from './components/screening-config/screenin
 import { ScreeningComponent } from './components/screening/screening.component';
 import { QuestionComponent } from './components/question/question.component';
 import { HardestQuestionsComponent } from './components/reports/hardest-questions/hardest-questions.component';
+import { AverageSkillComponent } from './components/reports/average-skill/average-skill.component';
 
 export const routes: Routes = [
   {
     path: '',
     component: CandidatesScreeningListComponent,
   },
+  
   {
     path:'reports',
     component: HardestQuestionsComponent,
@@ -27,7 +29,7 @@ export const routes: Routes = [
     // data: {
     //   roles: [
     //     roles.screenerRole, roles.vpRole
-    //   ]
+    //   ]nng
     // },
     children: [
       {

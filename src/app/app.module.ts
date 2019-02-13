@@ -7,7 +7,8 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+// import  { ChartModule } from 'angular2-highcharts';
+import { HighchartsChartModule} from 'highcharts-angular';
 
 // Importing the routes from app routes
 import { routes } from './app.routes';
@@ -26,7 +27,8 @@ import { SettingsComponent } from './components/settings/settings.component';
 import { SkillTypeBucketsComponent } from './components/skillType-buckets/skillType-buckets.component';
 import { SkillTypesComponent } from './components/skillTypes/skillTypes.component';
 import { ViolationFlagComponent } from './components/violation-flag/violation-flag.component';
-
+import { AverageSkillComponent} from './components/reports/average-skill/average-skill.component';
+import { AverageBucketTypeComponent } from './components/reports/average-bucket-type/average-bucket-type.component';
 
 // Services
 import { AlertsService } from './services/alert-service/alerts.service';
@@ -67,6 +69,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { CandidateComponent } from './components/candidate/candidate.component';
 import { HardestQuestionsComponent } from './components/reports/hardest-questions/hardest-questions.component';
 
+
 @NgModule({
   declarations: [
     // components
@@ -86,6 +89,7 @@ import { HardestQuestionsComponent } from './components/reports/hardest-question
     SkillTypesComponent,
     ViolationFlagComponent,
     CandidateComponent,
+    AverageSkillComponent,
     // pipes
     ArrToStringPipe,
     BucketFilterPipe,
@@ -98,6 +102,7 @@ import { HardestQuestionsComponent } from './components/reports/hardest-question
     TraineeSearch,
     TrainerPipePipe,
     HardestQuestionsComponent,
+    AverageBucketTypeComponent
   ],
   imports: [
     BrowserModule,
@@ -109,7 +114,9 @@ import { HardestQuestionsComponent } from './components/reports/hardest-question
     NgxPaginationModule,
     NavModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    // ChartModule.forRoot(require('highcharts'))'
+    HighchartsChartModule
   ],
   providers: [
     AlertsService,
@@ -129,7 +136,7 @@ import { HardestQuestionsComponent } from './components/reports/hardest-question
     SoftSkillsService,
     SoftSkillsViolationService,
     UrlService,
-    ViolationTypeService
+    ViolationTypeService,
   ],
   bootstrap: [AppComponent]
 })
