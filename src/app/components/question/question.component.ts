@@ -55,7 +55,7 @@ export class QuestionComponent implements OnInit {
   public tagsCollapsed = true;
 
 
-
+ 
   ngOnInit() {
     this.currentBucket = this.bucketService.getCurrentBucket();
     this.question = new Question();
