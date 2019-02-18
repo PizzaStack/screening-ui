@@ -8,7 +8,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // import  { ChartModule } from 'angular2-highcharts';
-import { HighchartsChartModule} from 'highcharts-angular';
+//import { HighchartsChartModule } from 'highcharts-angular';
 
 // Importing the routes from app routes
 import { routes } from './app.routes';
@@ -116,7 +116,7 @@ import { HardestQuestionsComponent } from './components/reports/hardest-question
     HttpClientModule,
     BrowserAnimationsModule,
     // ChartModule.forRoot(require('highcharts'))'
-    HighchartsChartModule
+    // HighchartsChartModule
   ],
   providers: [
     AlertsService,
