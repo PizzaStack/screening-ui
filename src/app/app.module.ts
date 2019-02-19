@@ -2,14 +2,12 @@
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-import { HighchartsChartModule} from 'highcharts-angular';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { NavModule } from './nav.module';
-import { Ng5SliderModule } from 'ng5-slider';
 import { NgModule } from '@angular/core';
 
 // Importing the routes from app routes
@@ -113,13 +111,11 @@ import { RoleGuard } from './role-guard';
     BrowserAnimationsModule,
     BrowserModule,    
     FormsModule,        
-    HighchartsChartModule,
-    HttpClientModule,
+    HttpClientModule,  
     HttpModule,
     NavModule,
     NgbModule.forRoot(),
     NgxPaginationModule,
-    Ng5SliderModule,
     ReactiveFormsModule,
     RouterModule.forRoot(routes, { useHash: true }),
   ],

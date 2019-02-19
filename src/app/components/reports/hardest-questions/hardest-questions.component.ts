@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+//import { reportsService} from 'services/reports'  ;
 
 @Component({
   selector: 'app-hardest-questions',
