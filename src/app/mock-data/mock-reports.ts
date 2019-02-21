@@ -197,7 +197,7 @@ export const MockSingleScreeners: ReportData[] = [
     },  
     {
         hardestQuestions: [
-            "What are the pillars of object oriented programming, epxlain them.?",
+            "What are the pillars of object oriented programming, explain them.?",
             "What is the different between an abstract class and an interface?",
             "What is CSS?",
             "What is MVC?",

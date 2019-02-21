@@ -23,14 +23,14 @@ export class ReportCacheService {
       return of(this.cacheMap[key]);
     }      
     else{
-      console.log(`Requesting ${key} from server`)''
+      console.log(`Requesting ${key} from server`);
       return this.reportService.getScreenersByPartialEmail(partialEmail).pipe(
         tap(data => this.cacheMap[key] = data),);
     }
   }
  
   getScreenerDataByWeeks(weeks: number, email: string): Observable<ReportData> {
-    let key = `$weeks={weeks}&email=${email}`;
+    let key = `$weeks=${weeks}&email=${email}`;
     if (key in this.cacheMap){
       console.log(`Retrieving ${key} from cache`);
       return of(this.cacheMap[key]);
